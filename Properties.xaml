@@ -1,0 +1,101 @@
+﻿<Window x:Class="WpfApp3.Propertiess"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+         xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared"
+        xmlns:themes="http://schemas.actiprosoftware.com/winfx/xaml/themes"
+        xmlns:docking="http://schemas.actiprosoftware.com/winfx/xaml/docking"
+        mc:Ignorable="d"
+        Title="Properties" Height="450" Width="700" ResizeMode="NoResize">
+    <themes:WindowChrome.Chrome>
+        <!--
+			A single WindowChrome instance can be used in multiple Windows, but this sample defines the WindowChrome inline
+		-->
+        <themes:WindowChrome x:Name="chrome" TitleBarHeaderAlignment="Left" >
+
+            <themes:WindowChrome.TitleBarLeftContentTemplate>
+                <DataTemplate>
+                    <!-- Menu in title bar -->
+                    <shared:TitleBarMenu Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(TextElement.Foreground)}">
+
+                    </shared:TitleBarMenu>
+                </DataTemplate>
+            </themes:WindowChrome.TitleBarLeftContentTemplate>
+        </themes:WindowChrome>
+    </themes:WindowChrome.Chrome>
+    <Grid>
+        <!--
+        <docking:DockSite x:Name="dockSite" FloatingWindowShowInTaskBarMode="Always" Padding="2" CanToolWindowsFloat="False" >
+            <docking:SplitContainer Orientation="Vertical">
+                <docking:SplitContainer>
+                    <docking:Workspace>
+                        <docking:TabbedMdiHost >
+                            <docking:TabbedMdiContainer>
+                                <docking:ToolWindow Title="Dashboard">
+                                    <docking:DockSite>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="images/hackthebox.png" Width="16"/>
+                                            <Label Grid.Column="1" Content="HackTheBox" HorizontalAlignment="Left" FontWeight="Bold" FontSize="13"/>
+                                            <Label Grid.Column="1" Grid.Row="1" Content="! Connect your hackthebox account to confirm your skill" HorizontalAlignment="Left" Foreground="#FFF17408" />
+                                            <Label Grid.Row="2" Grid.Column="1" Content="Enter your App Token :"/>
+                                            <PasswordBox Grid.Row="3" Grid.Column="1"/>
+                                            <Button Grid.Row="64" Grid.Column="43" Margin="0,0,10,10"  VerticalAlignment="Bottom" HorizontalAlignment="Right"  Padding="5,2" Content="Next" Height="22" Width="56" Click="openmain"/>
+                                        </Grid>
+                                    </docking:DockSite>
+                                </docking:ToolWindow>
+                            </docking:TabbedMdiContainer>
+                        </docking:TabbedMdiHost>
+                    </docking:Workspace>
+                </docking:SplitContainer>
+
+            </docking:SplitContainer>
+
+        </docking:DockSite>
+        -->
+        <TabControl Background="#FF232325" BorderBrush="#FF007ACC" BorderThickness="0,1,0,0">
+            <TabItem Header="TabItem">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="images/hackthebox.png" Width="16"/>
+                    <Label Grid.Column="1" Content="HackTheBox" HorizontalAlignment="Left" FontWeight="Bold" FontSize="13"/>
+                    <Label Grid.Column="1" Grid.Row="1" Content="! Connect your hackthebox account to confirm your skill" HorizontalAlignment="Left" Foreground="#FFF17408" />
+                    <Label Grid.Row="2" Grid.Column="1" Content="Enter your App Token :"/>
+                    <PasswordBox Grid.Row="3" Grid.Column="1" Margin="0,0,65,0"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="Check" Margin="276,0,10,0"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="Token is positive" Padding="5" Foreground="#FF9FEF00"/>
+                    <Button Grid.Row="64" Grid.Column="43" Margin="0,0,10,10"  VerticalAlignment="Bottom" HorizontalAlignment="Right"  Padding="5,2" Content="Next" Height="22" Width="56" Click="openmain"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

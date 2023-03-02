@@ -1,0 +1,364 @@
+<?xml version="1.0"?><doc><assembly><name>ActiproSoftware.Themes.Aero.Wpf</name></assembly><members><member name="T:ActiproSoftware.Windows.Themes.ThemesAeroThemeCatalog"><summary>
+            A theme catalog that describes the theme group name implementations and available themed resource dictionaries within this assembly.
+            </summary></member><member name="P:ActiproSoftware.Windows.Themes.ThemesAeroThemeCatalog.DictionaryReferences"><summary>
+            Gets the collection of <see cref="T:ActiproSoftware.Windows.Themes.ThemedResourceDictionaryReference" /> objects for the assembly.
+            </summary><value>
+            The collection of <see cref="T:ActiproSoftware.Windows.Themes.ThemedResourceDictionaryReference" /> objects for the assembly.
+            </value></member><member name="T:ActiproSoftware.Windows.Themes.ThemesAeroThemeCatalogRegistrar"><summary>
+            Represents a class that registers the <see cref="T:ActiproSoftware.Windows.Themes.ThemesAeroThemeCatalog" /> with the theme manager.
+            </summary></member><member name="T:ActiproSoftware.Windows.Themes.TintedResourceDictionary"><summary>
+            Represents a <see cref="T:System.Windows.ResourceDictionary" /> that wraps the <see cref="T:System.Windows.ResourceDictionary" /> specified in the <see cref="P:ActiproSoftware.Windows.Themes.TintedResourceDictionary.SourceDictionary" />
+            property and clones and tints its resources.
+            </summary></member><member name="M:ActiproSoftware.Windows.Themes.TintedResourceDictionary.#ctor"><summary>
+            Initializes an instance of the <c>TintedResourceDictionary</c> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Themes.TintedResourceDictionary.#ctor(System.Windows.ResourceDictionary,System.Windows.Media.Color)"><summary>
+            Initializes an instance of the <c>TintedResourceDictionary</c> class.
+            </summary><param name="sourceDictionary">The <see cref="T:System.Windows.ResourceDictionary" /> whose contents will be cloned, tinted, and placed in the <c>MergedDictionaries</c> collection.</param><param name="tintColor">The default <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintedResourceDictionary.#ctor(System.Windows.ResourceDictionary,System.Windows.Media.Color,System.Collections.Generic.ICollection{ActiproSoftware.Windows.Themes.TintGroup})"><summary>
+            Initializes an instance of the <c>TintedResourceDictionary</c> class.
+            </summary><param name="sourceDictionary">The <see cref="T:System.Windows.ResourceDictionary" /> whose contents will be cloned, tinted, and placed in the <c>MergedDictionaries</c> collection.</param><param name="tintColor">The default <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources.</param><param name="tintGroups">The collection of tint groups that will not be tinted.</param></member><member name="P:ActiproSoftware.Windows.Themes.TintedResourceDictionary.SourceDictionary"><summary>
+            Gets or sets the <see cref="T:System.Windows.ResourceDictionary" /> whose contents will be cloned, tinted, and placed
+            in the <c>MergedDictionaries</c> collection.
+            </summary><value>
+            The <see cref="T:System.Windows.ResourceDictionary" /> whose contents will be cloned, tinted, and placed
+            in the <c>MergedDictionaries</c> collection.
+            </value></member><member name="P:ActiproSoftware.Windows.Themes.TintedResourceDictionary.TintColor"><summary>
+            Gets or sets the default <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources.
+            </summary><value>
+            The default <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources.
+            The default value is <c>Colors.Transparent</c>.
+            </value><remarks>
+            If <c>Colors.Transparent</c> is specified, no tinting will be performed.
+            </remarks></member><member name="P:ActiproSoftware.Windows.Themes.TintedResourceDictionary.TintGroups"><summary>
+            Gets the collection of tint groups that can be referenced in the resources via the <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property.
+            </summary><value>
+            The collection of tint groups that can be referenced in the resources via the <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property.
+            </value><remarks>
+            If left unmodified, the default collection will contain a <see cref="T:ActiproSoftware.Windows.Themes.TintGroup" /> named <c>NoTint</c> that
+            prevents tinting from occurring on resources that reference it.
+            </remarks></member><member name="T:ActiproSoftware.Windows.Themes.TintedResourceDictionaryReference"><summary>
+            Provides a reference to a themed <see cref="T:System.Windows.ResourceDictionary" /> that should be tinted and describes its contents.
+            </summary></member><member name="M:ActiproSoftware.Windows.Themes.TintedResourceDictionaryReference.#ctor"><summary>
+            Initializes an instance of the <c>TintedResourceDictionaryReference</c> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Themes.TintedResourceDictionaryReference.#ctor(ActiproSoftware.Windows.Themes.ThemedResourceDictionaryReference)"><summary>
+            Initializes an instance of the <c>TintedResourceDictionaryReference</c> class.
+            </summary><param name="sourceReference">A <see cref="T:ActiproSoftware.Windows.Themes.ThemedResourceDictionaryReference" /> that should be tinted.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintedResourceDictionaryReference.GetResourceDictionary"><summary>
+            Gets a <see cref="T:System.Windows.ResourceDictionary" /> initialized using <see cref="P:ActiproSoftware.Windows.Themes.ThemedResourceDictionaryReference.LocationUri" />.
+            </summary><returns>The <see cref="T:System.Windows.ResourceDictionary" /> that was initialized.</returns></member><member name="P:ActiproSoftware.Windows.Themes.TintedResourceDictionaryReference.TintColor"><summary>
+            Gets the default <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources.
+            </summary><value>
+            The default <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources.
+            </value><remarks>
+            If <c>Colors.Transparent</c> is specified, no tinting will be performed.
+            </remarks></member><member name="P:ActiproSoftware.Windows.Themes.TintedResourceDictionaryReference.TintGroups"><summary>
+            Gets the collection of tint groups that can be referenced in the resources via the <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property.
+            </summary><value>
+            The collection of tint groups that can be referenced in the resources via the <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property.
+            </value><remarks>
+            If left unmodified, the default collection will contain a <see cref="T:ActiproSoftware.Windows.Themes.TintGroup" /> named <c>NoTint</c> that
+            prevents tinting from occurring on resources that reference it.
+            </remarks></member><member name="T:ActiproSoftware.Windows.Themes.TintedThemeCatalog"><summary>
+            Represents a theme catalog that can be used to tint another theme catalog.
+            </summary></member><member name="M:ActiproSoftware.Windows.Themes.TintedThemeCatalog.#ctor"><summary>
+            Initializes an instance of the <c>TintedThemeCatalog</c> class that will tint all registered system theme catalogs.
+            </summary></member><member name="M:ActiproSoftware.Windows.Themes.TintedThemeCatalog.#ctor(System.Windows.Media.Color)"><summary>
+            Initializes an instance of the <c>TintedThemeCatalog</c> class that will tint all registered system theme catalogs.
+            </summary><param name="tintColor">The <see cref="T:System.Windows.Media.Color" /> that is used to tint the <see cref="P:ActiproSoftware.Windows.Themes.TintGroupSets.Default" /> resources.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintedThemeCatalog.#ctor(ActiproSoftware.Windows.Themes.ThemeCatalogBase)"><summary>
+            Initializes an instance of the <c>TintedThemeCatalog</c> class that will tint the specified theme catalog.
+            </summary><param name="sourceCatalog">A <see cref="T:ActiproSoftware.Windows.Themes.ThemeCatalogBase" /> that should be tinted.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintedThemeCatalog.#ctor(ActiproSoftware.Windows.Themes.ThemeCatalogBase,System.Windows.Media.Color)"><summary>
+            Initializes an instance of the <c>TintedThemeCatalog</c> class that will tint the specified theme catalog.
+            </summary><param name="sourceCatalog">A <see cref="T:ActiproSoftware.Windows.Themes.ThemeCatalogBase" /> that should be tinted.</param><param name="tintColor">The <see cref="T:System.Windows.Media.Color" /> that is used to tint the <see cref="P:ActiproSoftware.Windows.Themes.TintGroupSets.Default" /> resources.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintedThemeCatalog.#ctor(System.String)"><summary>
+            Initializes an instance of the <c>TintedThemeCatalog</c> class that will tint the current system theme from all registered system theme catalogs and apply a custom theme name.
+            </summary><param name="customTheme">The name to give the new tinted theme.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintedThemeCatalog.#ctor(System.String,System.Windows.Media.Color)"><summary>
+            Initializes an instance of the <c>TintedThemeCatalog</c> class that will tint the current system theme from all registered system theme catalogs and apply a custom theme name.
+            </summary><param name="customTheme">The name to give the new tinted theme.</param><param name="tintColor">The <see cref="T:System.Windows.Media.Color" /> that is used to tint the <see cref="P:ActiproSoftware.Windows.Themes.TintGroupSets.Default" /> resources.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintedThemeCatalog.#ctor(System.String,System.String)"><summary>
+            Initializes an instance of the <c>TintedThemeCatalog</c> class that will tint the specified theme from all registered system theme catalogs and apply a custom theme name.
+            </summary><param name="customTheme">The name to give the new tinted theme.</param><param name="theme">The theme to use as a basis for the custom theme.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintedThemeCatalog.#ctor(System.String,System.String,System.Windows.Media.Color)"><summary>
+            Initializes an instance of the <c>TintedThemeCatalog</c> class that will tint the specified theme from all registered system theme catalogs and apply a custom theme name.
+            </summary><param name="customTheme">The name to give the new tinted theme.</param><param name="theme">The theme to use as a basis for the custom theme.</param><param name="tintColor">The <see cref="T:System.Windows.Media.Color" /> that is used to tint the <see cref="P:ActiproSoftware.Windows.Themes.TintGroupSets.Default" /> resources.</param></member><member name="P:ActiproSoftware.Windows.Themes.TintedThemeCatalog.CustomTheme"><summary>
+            Gets the name of the custom theme to which the tinted resources apply, if any.
+            </summary><value>
+            The name of the custom theme to which the tinted resources apply, if any.
+            </value></member><member name="P:ActiproSoftware.Windows.Themes.TintedThemeCatalog.DictionaryReferences"><summary>
+            Gets the collection of <see cref="T:ActiproSoftware.Windows.Themes.ThemedResourceDictionaryReference" /> objects for the assembly.
+            </summary><value>The collection of <see cref="T:ActiproSoftware.Windows.Themes.ThemedResourceDictionaryReference" /> objects for the assembly.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintedThemeCatalog.SourceCatalog"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.Windows.Themes.ThemeCatalogBase" /> whose references will be tinted, if any.
+            </summary><value>
+            The <see cref="T:ActiproSoftware.Windows.Themes.ThemeCatalogBase" /> whose references will be tinted; otherwise, <see langword="null" /> indicates all the registered system theme catalogs will be tinted.
+            </value></member><member name="P:ActiproSoftware.Windows.Themes.TintedThemeCatalog.Themes"><summary>
+            Gets the collection of theme names (e.g. AeroNormalColor, OfficeBlue, etc.) to which the tinting will be applied.
+            </summary><value>The collection of theme names.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintedThemeCatalog.TintGroups"><summary>
+            Gets the collection of tint groups that can be referenced in the resources via the <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property.
+            </summary><value>
+            The collection of tint groups that can be referenced in the resources via the <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property.
+            </value><remarks>
+            If left unmodified, the default collection will contain a <see cref="T:ActiproSoftware.Windows.Themes.TintGroup" /> named <c>NoTint</c> that
+            prevents tinting from occurring on resources that reference it.
+            </remarks></member><member name="T:ActiproSoftware.Windows.Themes.TintGroup"><summary>
+            Represents a group that can be referenced via the <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property
+            on <see cref="T:System.Windows.Media.Brush" /> and <see cref="T:System.Windows.Media.Pen" /> resources to apply non-default tint-colors.
+            </summary><remarks>
+            This class is intended to be used with the <see cref="T:ActiproSoftware.Windows.Themes.TintedResourceDictionary" /> for the purposes of tinting <see cref="T:System.Windows.Media.Brush" />
+            and <see cref="T:System.Windows.Media.Pen" /> resources.
+            <para>
+            Specify a <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.TintColor" /> of <c>Colors.Transparent</c> (the default) to prevent resources that reference this
+            group from being tinted.
+            </para></remarks></member><member name="M:ActiproSoftware.Windows.Themes.TintGroup.#ctor"><summary>
+            Initializes an instance of the <c>TintGroup</c> class.
+            </summary></member><member name="M:ActiproSoftware.Windows.Themes.TintGroup.#ctor(System.String,System.Windows.Media.Color)"><summary>
+            Initializes an instance of the <c>TintGroup</c> class.
+            </summary><param name="name">The name of the tint group.</param><param name="tintColor">The <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources that reference this <see cref="T:ActiproSoftware.Windows.Themes.TintGroup" />.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintGroup.#ctor(System.String,System.Windows.Media.Color,System.Collections.Generic.IEnumerable{System.Object})"><summary>
+            Initializes an instance of the <c>TintGroup</c> class.
+            </summary><param name="name">The name of the tint group.</param><param name="tintColor">The <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources that reference this <see cref="T:ActiproSoftware.Windows.Themes.TintGroup" />.</param><param name="excludedKeys">The keys to exclude from tinting.</param></member><member name="M:ActiproSoftware.Windows.Themes.TintGroup.GetName(System.Windows.DependencyObject)"><summary>
+            Gets the value of the <c>Name</c> attached property for the specified object.
+            </summary><param name="obj">The object from which the property value is read.</param><returns>The object's value.</returns></member><member name="M:ActiproSoftware.Windows.Themes.TintGroup.SetName(System.Windows.DependencyObject,System.String)"><summary>
+            Sets the value of the <c>Name</c> attached property to the specified object. 
+            </summary><param name="obj">The object to which the attached property is written.</param><param name="value">The value to set.</param></member><member name="P:ActiproSoftware.Windows.Themes.TintGroup.ExcludedKeys"><summary>
+            Gets the collection of excluded keys.
+            </summary><value>The collection of excluded keys.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroup.Name"><summary>
+            Gets or sets the name of the tint group, that can be referenced by resources using the 
+            <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property.
+            </summary><value>
+            The name of the tint group, that can be referenced by resources using the 
+            <see cref="P:ActiproSoftware.Windows.Themes.TintGroup.Name" /> attached property.
+            </value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroup.TintColor"><summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources that reference this <see cref="T:ActiproSoftware.Windows.Themes.TintGroup" />.
+            </summary><value>
+            The <see cref="T:System.Windows.Media.Color" /> that is used to tint the resources that reference this <see cref="T:ActiproSoftware.Windows.Themes.TintGroup" />.
+            The default value is <c>Colors.Transparent</c>.
+            </value><remarks>
+            If <c>Colors.Transparent</c> is specified, no tinting will be performed.
+            </remarks></member><member name="F:ActiproSoftware.Windows.Themes.TintGroup.NoTint"><summary>
+            Represents a tint group that is not tinted. This field is read-only.
+            </summary></member><member name="T:ActiproSoftware.Windows.Themes.TintGroupCollection"><summary>
+            Represents an observable collection of <see cref="T:ActiproSoftware.Windows.Themes.TintGroup" /> objects.
+            </summary></member><member name="M:ActiproSoftware.Windows.Themes.TintGroupCollection.AddRange(System.Collections.Generic.IEnumerable{System.String},System.Windows.Media.Color)"><summary>
+            Adds multiple tint groups to the collection.
+            </summary><param name="names">The names of the tint groups to add.</param><param name="tintColor">The tint color to associate with the specified names.</param></member><member name="T:ActiproSoftware.Windows.Themes.TintGroupNames"><summary>
+            Represents the known tint group names.
+            </summary></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ActionPopup"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.AeroWizard"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.AlternateWindowTitleBar"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.AlternateWindowTitleBarButton"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ApplicationMenu"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.AutoHideTabControl"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.AutoHideTabItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.AutoHideTabItemState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.BackstageButton"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.BackstageHeaderSeparator"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.BackstageTabControl"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.BackstageTabItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.BackstageTaskTabItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Bullet"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.BulletGlyph"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.BulletState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Button"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ButtonState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Chart"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.CloseWindowTitleBarButton"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Container"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.DockGuide"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.DockingWindowPreview"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.DockSite"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.DocumentViewer"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.DropDown"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.DropDownState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Edit"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Expander"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ExpanderState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ExplorerBarExpander"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ExplorerBarExpanderState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.GridSplitter"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Gripper"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.GroupBox"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Hyperlink"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.KeyTip"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.List"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ListHeader"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ListHeaderState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ListItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ListItemState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Menu"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.MenuEdit"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.MenuItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.MenuItemState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.NavigationBarSplitter"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.NavigationPaneHeader"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.NavigationPaneHeaderState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Popup"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.PopupGalleryFilter"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.PopupGalleryFilterState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.PopupGripper"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.PrimaryAccent"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ProgressBar"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ProgressBarState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Rating"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Ribbon"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.RibbonSeparator"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.RibbonTabControl"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.RibbonTabItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.RibbonToolBarTray"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ScrollBar"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ScrollBarButton"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ScrollBarThumb"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ScrollViewer"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Separator"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Slider"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.SliderSelection"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.SliderThumb"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.SliderThumbState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.SliderTrack"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.StandardMdi"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.StatusBar"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.StatusBarSliderThumb"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.StatusBarSliderTrack"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TabbedMdiContainer"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TabbedMdiContainerTabControl"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TabbedMdiContainerTabControlState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TabbedMdiContainerTabItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TabbedMdiContainerTabItemState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TabControl"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TabItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TabItemState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.TaskBoard"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Thumb"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToggleSwitch"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolBar"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolBarButton"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolBarButtonState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolBarEdit"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolBarEditState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolBarGallery"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolTip"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolWindowContainer"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolWindowContainerTabItem"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolWindowContainerTabItemState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolWindowContainerTitleBar"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.ToolWindowContainerTitleBarState"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Window"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.WindowTitleBar"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.WindowTitleBarButton"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.Workspace"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.WorkspaceScrollBar"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.WorkspaceScrollBarButton"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.WorkspaceScrollBarThumb"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupNames.WorkspaceToolBarTray"><summary>
+            Gets a tint group name.
+            </summary><value>A tint group name.</value></member><member name="T:ActiproSoftware.Windows.Themes.TintGroupSets"><summary>
+            Represents the known tint group sets.
+            </summary></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupSets.All"><summary>
+            Gets a tint group set.
+            </summary><value>A tint group set.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupSets.ApplicationMenu"><summary>
+            Gets a tint group set.
+            </summary><value>A tint group set.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupSets.Default"><summary>
+            Gets a tint group set.
+            </summary><value>A tint group set.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupSets.Hyperlink"><summary>
+            Gets a tint group set.
+            </summary><value>A tint group set.</value></member><member name="P:ActiproSoftware.Windows.Themes.TintGroupSets.State"><summary>
+            Gets a tint group set.
+            </summary><value>A tint group set.</value></member></members></doc>

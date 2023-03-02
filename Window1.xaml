@@ -1,0 +1,140 @@
+﻿<Window xmlns:wizard="http://schemas.actiprosoftware.com/winfx/xaml/wizard"  xmlns:ribbon="http://schemas.actiprosoftware.com/winfx/xaml/ribbon"  x:Class="WpfApp3.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:editors="http://schemas.actiprosoftware.com/winfx/xaml/editors"
+        xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared"
+        xmlns:themes="http://schemas.actiprosoftware.com/winfx/xaml/themes"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        WindowStartupLocation="CenterScreen"
+        xmlns:local="clr-namespace:WpfApp3"
+        Background="#1e1e1e"
+        Foreground="#f0eff1"
+        Icon="/images/untitled-2.png"
+        mc:Ignorable="d"
+        Title="Red Eye" Height="420" Width="320" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style x:Key="lbcolor" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Bd"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelectionActive"
+                                            Value="False" />
+                                    <Condition Property="IsSelected"
+                                            Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background"
+                                    TargetName="Bd"
+                                    Value="DarkOrange" />
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelectionActive"
+                                            Value="True" />
+                                    <Condition Property="IsSelected"
+                                            Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background"
+                                    TargetName="Bd"
+                                    Value="OrangeRed" />
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <themes:WindowChrome.Chrome>
+        <!--
+			A single WindowChrome instance can be used in multiple Windows, but this sample defines the WindowChrome inline
+		-->
+        <themes:WindowChrome x:Name="chrome" TitleBarHeaderAlignment="Left" >
+
+            <themes:WindowChrome.TitleBarLeftContentTemplate>
+                <DataTemplate>
+                    <!-- Menu in title bar -->
+                    <shared:TitleBarMenu Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(TextElement.Foreground)}">
+
+                    </shared:TitleBarMenu>
+                </DataTemplate>
+            </themes:WindowChrome.TitleBarLeftContentTemplate>
+            <themes:WindowChrome.TitleBarRightContentTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+
+                    </WrapPanel>
+                </DataTemplate>
+            </themes:WindowChrome.TitleBarRightContentTemplate>
+        </themes:WindowChrome>
+    </themes:WindowChrome.Chrome>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="v1.223alpha" Margin="4,4,0,0" VerticalAlignment="Top" FontSize="11" HorizontalAlignment="Left" Padding="0"/>
+                <ribbon:Button HorizontalAlignment="Right"  Margin="0,10,10,0" VerticalAlignment="Top" Padding="3" Height="24" Width="24" >
+            <ribbon:Button.ImageSourceSmall>
+                <BitmapImage UriSource="images/settings.png" UriCachePolicy="{x:Null}"/>
+            </ribbon:Button.ImageSourceSmall>
+        </ribbon:Button>
+        <Image Height="80" Margin="117,10,117,0" VerticalAlignment="Top" Source="/images/untitled-2.png" HorizontalAlignment="Center" Width="80"/>
+        <Label Content="Red Eye" Margin="108,90,108,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Height="42" Width="98"/>
+        <StackPanel Grid.Row="1">
+            <ListBox  HorizontalAlignment="Center" Margin="0,10" Name="listBox2" VerticalAlignment="Top" >
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBoxItem Content="Client" Background="Transparent" Style="{DynamicResource lbcolor}" Padding="6,2" Selected="lbiclientselected"  />
+                <ListBoxItem Content="Server" Background="Transparent" Style="{DynamicResource lbcolor}" Padding="6,2" Selected="lbiserverselected" />
+                    <ListBoxItem x:Name="lbiblank" Background="Transparent" Content="Blank" Style="{DynamicResource lbcolor}" Padding="6,2" Selected="lbiblankselected"/>
+            </ListBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Source="images/server.png" Width="16" />
+                <TextBox x:Name="serverip" Text="10.10.10.10" VerticalAlignment="Center" Width="200"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <Image  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"  Source="images/user.png" Width="16" />
+                <TextBox x:Name="nickbox" Text="veryuniquename" VerticalAlignment="Center" Width="200"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Source="images/pass.png" Width="16"/>
+                <TextBox x:Name="passbox" Text="{Binding Path=Ready}" VerticalAlignment="Center" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <Image  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Source="images/otp.png" Width="16"/>
+                <TextBox x:Name="otpbox" Text="OTP" VerticalAlignment="Center" Width="200" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="44,0,0,0" >
+                <CheckBox x:Name="specialcheckbox" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Request special permissions"/>
+            </StackPanel>
+        </StackPanel>
+
+
+
+        <Button Grid.Row="2" Margin="0,0,15,15"  VerticalAlignment="Bottom" HorizontalAlignment="Right"  Padding="5,2" Content="Next" Height="22" Width="56" Click="opennext"/>
+
+    </Grid>
+
+</Window>

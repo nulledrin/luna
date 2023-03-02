@@ -1,0 +1,69 @@
+﻿<Page x:Class="WpfApp3.Dashboard2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:microcharts="http://schemas.actiprosoftware.com/winfx/xaml/microcharts"
+      xmlns:local="clr-namespace:WpfApp3"
+      xmlns:datagrid="http://schemas.actiprosoftware.com/winfx/xaml/datagrid"
+	xmlns:datagrideditors="http://schemas.actiprosoftware.com/winfx/xaml/datagrideditors"
+	xmlns:grids="http://schemas.actiprosoftware.com/winfx/xaml/grids" 
+      xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared"
+	xmlns:gridseditors="http://schemas.actiprosoftware.com/winfx/xaml/gridseditors" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Machines">
+    <Grid >
+        <grids:TreeListView x:Name="treeListView" RootItem="{Binding}" CanColumnsToggleVisibility="True">
+            <grids:TreeListView.Resources>
+                <Style TargetType="{x:Type grids:TreeListViewItem}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding authUserInRootOwns}"
+                      Value="true">
+                            <Setter Property="Background"
+                  Value="#199FEF00" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </grids:TreeListView.Resources>
+            <grids:TreeListView.ItemAdapter >
+                <grids:TreeListBoxItemAdapter 
+					ChildrenBinding="{Binding Children, Mode=OneTime}" 
+					IsExpandedBinding="{Binding IsExpanded, Mode=TwoWay}" 
+					IsSelectedBinding="{Binding IsSelected, Mode=TwoWay}" 
+					/>
+
+            </grids:TreeListView.ItemAdapter>
+            <grids:TreeListView.Columns>
+                <grids:TreeListViewColumn Header="Name" Width="*" MaxWidth="200">
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Source="{Binding ava}" Width="16" />
+
+                            <TextBlock Grid.Column="1" Margin="0,0,0,1" Text="{Binding Name}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </grids:TreeListViewColumn>
+                <grids:TreeListViewColumn Header="OS" MinWidth="75" DisplayMemberBinding="{Binding os}"  />
+                <grids:TreeListViewColumn Header="User Owns" MinWidth="75" DisplayMemberBinding="{Binding user_owns_count}" />
+                <grids:TreeListViewColumn Header="System Owns" MinWidth="75" DisplayMemberBinding="{Binding root_owns_count}"  />
+                <grids:TreeListViewColumn Header="Stars" MinWidth="75" DisplayMemberBinding="{Binding stars}" />
+                <grids:TreeListViewColumn Header="Owned" MinWidth="75" DisplayMemberBinding="{Binding isowned}" />
+            </grids:TreeListView.Columns>
+        </grids:TreeListView>
+        <StackPanel VerticalAlignment="Bottom" Background="#FF232325" Margin="1">
+            <ComboBox Text="ComboBox" Width="80" Margin="5,5,0,5" HorizontalAlignment="Left" >
+                <ComboBoxItem IsSelected="True">Active</ComboBoxItem>
+                <ComboBoxItem>Retired</ComboBoxItem>
+                <ComboBoxItem>Scheduled</ComboBoxItem>
+                <ComboBoxItem>Todo</ComboBoxItem>
+                <ComboBoxItem>All</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+    </Grid>
+</Page>
